@@ -1,0 +1,195 @@
+[
+  {
+    "id": "mouse_01",
+    "name": "HyperX Pulsefire FPS Pro",
+    "brand": "HyperX",
+    "category": "Mouse",
+    "price": 249.90,
+    "imageUrl": "android.resource://com.example.peripheralcatalog/drawable/mouse_hyperx_pulsefire",
+    "description": "Mouse gamer com sensor Pixart 3389, ajuste de DPI e iluminacao RGB personalizavel.",
+    "specs": {
+      "DPI": "16000",
+      "Peso": "95 g",
+      "Conectividade": "USB",
+      "RGB": "Sim"
+    },
+    "features": ["RGB", "Com Fio"]
+  },
+  {
+    "id": "mouse_02",
+    "name": "Logitech G502 Lightspeed",
+    "brand": "Logitech",
+    "category": "Mouse",
+    "price": 699.00,
+    "imageUrl": "android.resource://com.example.peripheralcatalog/drawable/logitech_g502_lightspeed",
+    "description": "Mouse sem fio com sensor HERO 25K, 11 botoes programaveis e ajuste de peso.",
+    "specs": {
+      "DPI": "25600",
+      "Peso": "114 g",
+      "Conectividade": "Lightspeed Wireless / USB",
+      "RGB": "Sim"
+    },
+    "features": ["RGB", "Wireless"]
+  },
+  {
+    "id": "keyboard_01",
+    "name": "Razer Huntsman Mini",
+    "brand": "Razer",
+    "category": "Teclado",
+    "price": 899.90,
+    "imageUrl": "android.resource://com.example.peripheralcatalog/drawable/teclado_mecanico_razer_huntsman_mini",
+    "description": "Teclado 60% com switches opticos Razer, tempo de resposta ultrarapido e iluminacao Chroma.",
+    "specs": {
+      "Tipo de Switch": "Razer Linear Optical",
+      "Formato": "60%",
+      "Conectividade": "USB-C",
+      "RGB": "Sim"
+    },
+    "features": ["RGB", "Mecanico", "Hot-Swap"]
+  },
+  {
+    "id": "keyboard_02",
+    "name": "Redragon Kumara K552",
+    "brand": "Redragon",
+    "category": "Teclado",
+    "price": 249.90,
+    "imageUrl": "android.resource://com.example.peripheralcatalog/drawable/teclado_gamer_kumara",
+    "description": "Teclado mecanico compacto com switches Outemu Blue e retroiluminacao em LED vermelho.",
+    "specs": {
+      "Tipo de Switch": "Outemu Blue",
+      "Formato": "TKL",
+      "Conectividade": "USB",
+      "RGB": "Não"
+    },
+    "features": ["Mecanico", "Com Fio"]
+  },
+  {
+    "id": "headset_01",
+    "name": "SteelSeries Arctis 7",
+    "brand": "SteelSeries",
+    "category": "Headset",
+    "price": 1199.90,
+    "imageUrl": "android.resource://com.example.peripheralcatalog/drawable/steelseries_arctis_7",
+    "description": "Headset sem fio de baixa latencia com som surround virtual 7.1 e bateria de ate 24 horas.",
+    "specs": {
+      "Impedancia": "32 ohms",
+      "Frequencia": "20 Hz - 20 kHz",
+      "Microfone": "Retratil",
+      "Conectividade": "2.4 GHz Wireless"
+    },
+    "features": ["Wireless", "Surround 7.1"]
+  },
+  {
+    "id": "headset_02",
+    "name": "HyperX Cloud II",
+    "brand": "HyperX",
+    "category": "Headset",
+    "price": 749.90,
+    "imageUrl": "android.resource://com.example.peripheralcatalog/drawable/hyperx_cloud_2",
+    "description": "Headset com drivers de 53 mm, conforto com memory foam e som surround 7.1 via USB.",
+    "specs": {
+      "Impedancia": "60 ohms",
+      "Frequencia": "15 Hz - 25 kHz",
+      "Microfone": "Destacavel",
+      "Conectividade": "USB / P2"
+    },
+    "features": ["Com Fio", "Surround 7.1"]
+  },
+  {
+    "id": "mousepad_01",
+    "name": "Corsair MM700 RGB",
+    "brand": "Corsair",
+    "category": "Mousepad",
+    "price": 599.90,
+    "imageUrl": "android.resource://com.example.peripheralcatalog/drawable/mousepad_mm700",
+    "description": "Mousepad estendido com acabamento em tecido e borda com iluminacao RGB integrada.",
+    "specs": {
+      "Dimensoes": "930 x 400 x 4 mm",
+      "Superficie": "Tecido",
+      "Conectividade": "USB",
+      "RGB": "Sim"
+    },
+    "features": ["RGB", "Grande"]
+  },
+  {
+    "id": "mousepad_02",
+    "name": "Logitech G640",
+    "brand": "Logitech",
+    "category": "Mousepad",
+    "price": 299.90,
+    "imageUrl": "android.resource://com.example.peripheralcatalog/drawable/mousepad_logitech_g640",
+    "description": "Mousepad de tecido com superficie uniforme e base de borracha antiderrapante.",
+    "specs": {
+      "Dimensoes": "460 x 400 x 3 mm",
+      "Superficie": "Tecido",
+      "Conectividade": "N/A",
+      "RGB": "Nao"
+    },
+    "features": ["Grande", "Com Fio"]
+  },
+  {
+    "id": "webcam_01",
+    "name": "Logitech C920s Pro",
+    "brand": "Logitech",
+    "category": "Webcam",
+    "price": 549.90,
+    "imageUrl": "android.resource://com.example.peripheralcatalog/drawable/webcam_logitech_c920",
+    "description": "Webcam Full HD 1080p com foco automatico, microfone estereo e tampa de privacidade.",
+    "specs": {
+      "Resolucao": "1080p@30fps",
+      "Conectividade": "USB",
+      "Campo de Visao": "78 graus",
+      "Microfone": "Estereo"
+    },
+    "features": ["Full HD", "Com Fio"]
+  },
+  {
+    "id": "webcam_02",
+    "name": "Razer Kiyo Pro",
+    "brand": "Razer",
+    "category": "Webcam",
+    "price": 1099.90,
+    "imageUrl": "android.resource://com.example.peripheralcatalog/drawable/razer_kiyo_pro",
+    "description": "Webcam com sensor adaptativo e video HDR 1080p@60fps, ideal para streaming.",
+    "specs": {
+      "Resolucao": "1080p@60fps",
+      "Conectividade": "USB 3.0",
+      "Campo de Visao": "103 graus",
+      "HDR": "Sim"
+    },
+    "features": ["HDR", "Full HD"]
+  },
+  {
+    "id": "controller_01",
+    "name": "Xbox Wireless Controller",
+    "brand": "Microsoft",
+    "category": "Controle",
+    "price": 469.90,
+    "imageUrl": "android.resource://com.example.peripheralcatalog/drawable/xbox_wireless_controller",
+    "description": "Controle com conexao Bluetooth/USB-C, textura antiderrapante e gatilhos lineares.",
+    "specs": {
+      "Conectividade": "Bluetooth / USB-C",
+      "Alcance": "6 metros",
+      "Bateria": "Pilhas AA ou recarregavel",
+      "Peso": "287 g"
+    },
+    "features": ["Wireless", "Bluetooth"]
+  },
+  {
+    "id": "microphone_01",
+    "name": "Blue Yeti X",
+    "brand": "Blue",
+    "category": "Microfone",
+    "price": 1299.90,
+    "imageUrl": "android.resource://com.example.peripheralcatalog/drawable/blue_yeti_x",
+    "description": "Microfone USB com quatro padroes de captacao e iluminacao LED para monitoramento.",
+    "specs": {
+      "Polares": "Cardioide, Bidirecional, Omnidirecional, Stereo",
+      "Conectividade": "USB",
+      "Taxa de Amostragem": "48 kHz",
+      "Profundidade": "24 bits"
+    },
+    "features": ["RGB", "USB"]
+  }
+]
+
