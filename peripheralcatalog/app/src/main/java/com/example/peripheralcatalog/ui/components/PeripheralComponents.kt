@@ -2,14 +2,7 @@ package com.example.peripheralcatalog.ui.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
@@ -19,18 +12,12 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.FavoriteBorder
 import androidx.compose.material.icons.filled.SwapHoriz
-import androidx.compose.material3.AssistChip
-import androidx.compose.material3.AssistChipDefaults
-import androidx.compose.material3.Card
-import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Text
+import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.style.TextOverflow
@@ -39,6 +26,9 @@ import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import com.example.peripheralcatalog.domain.model.Peripheral
+
+private val DarkBlue = Color(0xFF0A1E3F)
+private val LightBlue = Color(0xFF1976D2)
 
 @Composable
 fun PeripheralGrid(
@@ -50,8 +40,10 @@ fun PeripheralGrid(
     modifier: Modifier = Modifier
 ) {
     LazyVerticalGrid(
-        columns = GridCells.Adaptive(minSize = 180.dp),
+        columns = GridCells.Adaptive(minSize = 220.dp), // Aumentado de 180 -> 220
         modifier = modifier
+            .background(Color.White)
+            .padding(12.dp)
     ) {
         items(peripherals, key = { it.id }) { peripheral ->
             PeripheralCard(
@@ -77,12 +69,18 @@ fun PeripheralCard(
     val context = LocalContext.current
     Card(
         modifier = modifier
-            .padding(8.dp)
+            .padding(10.dp)
             .fillMaxWidth(),
-        shape = RoundedCornerShape(16.dp),
-        elevation = CardDefaults.cardElevation(defaultElevation = 4.dp)
+        shape = RoundedCornerShape(18.dp),
+        colors = CardDefaults.cardColors(
+            containerColor = Color.White
+        ),
+        elevation = CardDefaults.cardElevation(defaultElevation = 5.dp)
     ) {
-        Column(modifier = Modifier.clickable { onClick() }) {
+        Column(
+            modifier = Modifier
+                .clickable { onClick() }
+        ) {
             Box(modifier = Modifier.fillMaxWidth(), contentAlignment = Alignment.TopEnd) {
                 AsyncImage(
                     model = ImageRequest.Builder(context)
@@ -93,52 +91,74 @@ fun PeripheralCard(
                     contentScale = ContentScale.Crop,
                     modifier = Modifier
                         .fillMaxWidth()
-                        .height(140.dp)
-                        .clip(RoundedCornerShape(topStart = 16.dp, topEnd = 16.dp))
+                        .height(170.dp) // imagem maior
+                        .clip(RoundedCornerShape(topStart = 18.dp, topEnd = 18.dp))
                 )
                 IconButton(onClick = onToggleFavorite) {
                     Icon(
                         imageVector = if (peripheral.isFavorite) Icons.Default.Favorite else Icons.Default.FavoriteBorder,
-                        tint = if (peripheral.isFavorite) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurface,
+                        tint = if (peripheral.isFavorite) Color.Red else DarkBlue,
                         contentDescription = "Favoritar"
                     )
                 }
             }
-            Column(modifier = Modifier.padding(12.dp)) {
+
+            Column(modifier = Modifier.padding(14.dp)) {
                 Text(
                     text = peripheral.name,
-                    style = MaterialTheme.typography.titleMedium,
+                    style = MaterialTheme.typography.titleMedium.copy(
+                        color = DarkBlue,
+                        fontSize = 18.sp // aumentado
+                    ),
                     maxLines = 2,
                     overflow = TextOverflow.Ellipsis
                 )
                 Text(
                     text = peripheral.brand,
-                    style = MaterialTheme.typography.bodySmall,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                    style = MaterialTheme.typography.bodySmall.copy(
+                        color = Color.Gray,
+                        fontSize = 14.sp
+                    )
                 )
-                Spacer(modifier = Modifier.height(8.dp))
+
+                Spacer(modifier = Modifier.height(10.dp))
                 Row(verticalAlignment = Alignment.CenterVertically) {
                     Text(
                         text = "R$ %.2f".format(peripheral.price),
-                        style = MaterialTheme.typography.titleSmall.copy(fontSize = 18.sp)
-                    )
-                    Spacer(modifier = Modifier.weight(1f))
-                    AssistChip(
-                        onClick = onToggleComparison,
-                        label = { Text(text = if (isSelectedForComparison) "Selecionado" else "Comparar") },
-                        leadingIcon = {
-                            Icon(
-                                imageVector = Icons.Filled.SwapHoriz,
-                                contentDescription = null
-                            )
-                        },
-                        colors = AssistChipDefaults.assistChipColors(
-                            containerColor = if (isSelectedForComparison) MaterialTheme.colorScheme.primary.copy(alpha = 0.15f) else MaterialTheme.colorScheme.surfaceVariant,
-                            labelColor = if (isSelectedForComparison) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurfaceVariant
+                        style = MaterialTheme.typography.titleSmall.copy(
+                            fontSize = 20.sp, // maior destaque
+                            color = Color.Black
                         )
                     )
+                    Spacer(modifier = Modifier.weight(1f))
+
+                    Button(
+                        onClick = onToggleComparison,
+                        modifier = Modifier
+                            .height(46.dp)
+                            .width(140.dp), // botão maior
+                        shape = RoundedCornerShape(14.dp),
+                        colors = ButtonDefaults.buttonColors(
+                            containerColor = if (isSelectedForComparison)
+                                LightBlue
+                            else
+                                DarkBlue,
+                            contentColor = Color.White
+                        )
+                    ) {
+                        Icon(
+                            imageVector = Icons.Filled.SwapHoriz,
+                            contentDescription = null,
+                            modifier = Modifier.padding(end = 4.dp)
+                        )
+                        Text(
+                            text = if (isSelectedForComparison) "Selecionado" else "Comparar",
+                            style = MaterialTheme.typography.labelLarge.copy(fontSize = 14.sp)
+                        )
+                    }
                 }
-                Spacer(modifier = Modifier.height(8.dp))
+
+                Spacer(modifier = Modifier.height(10.dp))
                 FeatureRow(peripheral = peripheral)
             }
         }
@@ -148,22 +168,24 @@ fun PeripheralCard(
 @Composable
 private fun FeatureRow(peripheral: Peripheral) {
     val features = peripheral.features.take(3)
-    Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+    Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
         features.forEach { feature ->
             Box(
                 modifier = Modifier
                     .background(
-                        color = MaterialTheme.colorScheme.secondaryContainer,
+                        color = DarkBlue,
                         shape = CircleShape
                     )
-                    .padding(horizontal = 10.dp, vertical = 4.dp)
+                    .padding(horizontal = 12.dp, vertical = 6.dp) // etiquetas maiores
             ) {
                 Text(
                     text = feature,
-                    style = MaterialTheme.typography.labelSmall
+                    style = MaterialTheme.typography.labelSmall.copy(
+                        color = Color.White,
+                        fontSize = 13.sp
+                    )
                 )
             }
         }
     }
 }
-
